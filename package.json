@@ -4,8 +4,8 @@
   "description": "PHP Version Manager - Manage multiple PHP versions easily",
   "main": "index.js",
   "scripts": {
+    "start": "npm link && npm run setup && phpvm --version && phpvm list",
     "setup": "node setup.js",
-    "build": "pkg . --compress Brotli --output phpvm.exe",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -29,18 +29,5 @@
   "bin": {
     "phpvm": "./bin/phpvm.js",
     "phpvm-setup": "./setup.js"
-  },
-  "pkg": {
-    "scripts": [
-      "./bin/phpvm.js",
-      "./setup.js"
-    ],
-    "assets": [
-      "node_modules/"
-    ],
-    "targets": [
-      "win-x64"
-    ],
-    "outputPath": "dist"
   }
 }
